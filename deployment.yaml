@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: vmns/cicd
+        image: fareed1/ecr
         ports:
         - containerPort: 8080
