@@ -1,4 +1,7 @@
 FROM tomcat:9.0
-# Copy the WAR file into Tomcat's webapps director
-COPY target/JtSpringProject-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
 
+# Remove the default ROOT webapp if needed
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
+
+# Copy the WAR file into Tomcat
+COPY target/JtSpringProject.war /usr/local/tomcat/webapps/ROOT.war
