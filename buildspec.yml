@@ -4,7 +4,6 @@ phases:
   install:
     runtime-versions:
       java: corretto17
-      docker: 20
     commands:
       - echo Installing Maven...
       - yum install -y maven
@@ -28,7 +27,7 @@ phases:
       - echo Pushing image to ECR...
       - docker push 124677911839.dkr.ecr.ap-south-1.amazonaws.com/my-project:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"my-project-container","imageUri":"%s"}]' 124677911839.dkr.ecr.ap-south-1.amazonaws.com/my-project:latest > imagedefinitions.json
+      - printf '[{"name":"my-project-container","imageUri":"124677911839.dkr.ecr.ap-south-1.amazonaws.com/my-project:latest"}]' > imagedefinitions.json
 
 artifacts:
   files:
